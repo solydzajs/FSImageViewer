@@ -42,7 +42,7 @@
 		self.alwaysBounceHorizontal = NO;
         self.bouncesZoom = YES;
 		self.scrollsToTop = NO;
-		self.backgroundColor = [UIColor whiteColor];
+		self.backgroundColor = [UIColor blackColor];
 		self.decelerationRate = UIScrollViewDecelerationRateFast;
     }
     return self;

@@ -51,13 +51,13 @@
 - (id)initWithFrame:(CGRect)frame {
     if ((self = [super initWithFrame:frame])) {
 
-        self.backgroundColor = [UIColor whiteColor];
+        self.backgroundColor = [UIColor blackColor];
         self.userInteractionEnabled = NO;
         self.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         self.opaque = YES;
 
         FSImageScrollView *scrollView = [[FSImageScrollView alloc] initWithFrame:self.bounds];
-        scrollView.backgroundColor = [UIColor whiteColor];
+        scrollView.backgroundColor = [UIColor blackColor];
         scrollView.opaque = YES;
         scrollView.delegate = self;
         [self addSubview:scrollView];
@@ -70,7 +70,7 @@
         [_scrollView addSubview:imageView];
         _imageView = imageView;
 
-        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleGray];
+        activityView = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhiteLarge];
         activityView.frame = CGRectMake((CGRectGetWidth(self.frame) / 2) - 11.0f, CGRectGetHeight(self.frame) / 2, 22.0f, 22.0f);
         activityView.autoresizingMask = UIViewAutoresizingFlexibleRightMargin | UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleLeftMargin | UIViewAutoresizingFlexibleTopMargin;
         [self addSubview:activityView];
@@ -228,7 +228,7 @@
 }
 
 - (void)resetBackgroundColors {
-    self.backgroundColor = [UIColor whiteColor];
+    self.backgroundColor = [UIColor blackColor];
     self.superview.backgroundColor = self.backgroundColor;
     self.superview.superview.backgroundColor = self.backgroundColor;
 }

@@ -82,7 +82,7 @@
 	}
 #endif
 
-    self.view.backgroundColor = [UIColor whiteColor];
+    self.view.backgroundColor = [UIColor blackColor];
 
     if (!_scrollView) {
         self.scrollView = [[UIScrollView alloc] initWithFrame:self.view.bounds];
@@ -105,7 +105,6 @@
 
     if (!_titleView) {
         self.titleView = [[FSImageTitleView alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height, self.view.frame.size.width, 1)];
-        _titleView.adjustsFontSizeToFitWidth = [self isAdjustsFontSizeToFitWidth];
         [self.view addSubview:_titleView];
     }
 
@@ -240,7 +239,7 @@
     [self.navigationController setNavigationBarHidden:hidden animated:animated];
 
     [UIView animateWithDuration:0.3 animations:^{
-        UIColor *backgroundColor = hidden ? [UIColor blackColor] : [UIColor whiteColor];
+        UIColor *backgroundColor = [UIColor blackColor];
         self.view.backgroundColor = backgroundColor;
         self.scrollView.backgroundColor = backgroundColor;
         for (FSImageView *imageView in _imageViews) {
@@ -438,7 +437,7 @@
 
     if (imageView == nil || (NSNull *) imageView == [NSNull null]) {
         imageView = [[FSImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, _scrollView.bounds.size.width, _scrollView.bounds.size.height)];
-        UIColor *backgroundColor = barsHidden ? [UIColor blackColor] : [UIColor whiteColor];
+        UIColor *backgroundColor = [UIColor blackColor];
         [imageView changeBackgroundColor:backgroundColor];
         [_imageViews replaceObjectAtIndex:(NSUInteger) page withObject:imageView];
     }
